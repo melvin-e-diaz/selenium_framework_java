@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.selenium</groupId>
+  <artifactId>seleniumFramework2025</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+	<plugins>
+		<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+   			<artifactId>maven-compiler-plugin</artifactId>
+    		<version>3.14.0</version>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-surefire-plugin</artifactId>
+    		<version>3.5.3</version>
+    		<configuration>
+				<testFailureIgnore>true</testFailureIgnore>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>net.masterthought</groupId>
+   			<artifactId>maven-cucumber-reporting</artifactId>
+    		<version>5.8.5</version>
+    		<executions>
+				<execution>
+					<id>execution</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>generate</goal>
+					</goals>
+					<configuration>
+						<projectName>seleniumFramework2025</projectName>
+						<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+						<cucumberOutput>${project.build.directory}/cucumber-json-report.json</cucumberOutput>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+  </build>
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.33.0</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>5.13.1</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>5.4.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.4.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.jxls/jxls-jexcel -->
+	<dependency>
+	    <groupId>org.jxls</groupId>
+	    <artifactId>jxls-jexcel</artifactId>
+	    <version>1.0.9</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.dhatim/fastexcel-reader -->
+	<dependency>
+	    <groupId>org.dhatim</groupId>
+	    <artifactId>fastexcel-reader</artifactId>
+	    <version>0.19.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.dhatim/fastexcel -->
+	<dependency>
+	    <groupId>org.dhatim</groupId>
+	    <artifactId>fastexcel</artifactId>
+	    <version>0.19.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+	<dependency>
+	    <groupId>com.aventstack</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>5.1.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-java</artifactId>
+	    <version>7.23.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-testng</artifactId>
+	    <version>7.23.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>gherkin</artifactId>
+	    <version>32.1.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+	<dependency>
+	    <groupId>com.microsoft.sqlserver</groupId>
+	    <artifactId>mssql-jdbc</artifactId>
+	    <version>12.10.1.jre11</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>6.1.0</version>
+	</dependency>
+  </dependencies>
+</project>
