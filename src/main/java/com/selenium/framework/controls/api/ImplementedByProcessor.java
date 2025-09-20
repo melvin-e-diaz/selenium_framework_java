@@ -2,9 +2,6 @@ package com.selenium.framework.controls.api;
 
 import com.selenium.framework.controls.internals.Control;
 
-/**
- * Created by Karthik-pc on 12/10/2016.
- */
 public final class ImplementedByProcessor {
 
     public ImplementedByProcessor() {

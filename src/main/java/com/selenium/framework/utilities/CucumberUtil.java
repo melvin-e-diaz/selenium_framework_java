@@ -5,9 +5,6 @@ import java.util.List;
 
 import io.cucumber.datatable.DataTable;
 
-/**
- * Created by Karthik-PC on 21/04/2018.
- */
 public class CucumberUtil {
 
 

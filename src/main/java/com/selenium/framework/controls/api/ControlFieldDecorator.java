@@ -14,9 +14,6 @@ import org.openqa.selenium.support.pagefactory.FieldDecorator;
 import java.lang.reflect.*;
 import java.util.List;
 
-/**
- * Created by Karthik-pc on 12/10/2016.
- */
 public class ControlFieldDecorator implements FieldDecorator {
 
     protected ElementLocatorFactory factory;

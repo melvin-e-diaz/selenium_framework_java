@@ -4,9 +4,6 @@ import com.selenium.framework.controls.internals.Control;
 import com.selenium.framework.controls.internals.ControlBase;
 import org.openqa.selenium.WebElement;
 
-/**
- * Created by Karthik-pc on 12/10/2018.
- */
 public class ButtonBase extends ControlBase implements Button {
 
 

@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Created by Karthik-PC on 11/23/2018.
- */
 public class LogUtil {
 
     //File format for the log name

@@ -4,15 +4,12 @@ import java.sql.*;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-/**
- * Created by Karthik-PC on 11/23/2018.
- */
 public class DatabaseUtil {
 
     public static Connection Open(String connectionString)
     {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); //to-do: update to replace deprecated class
             return DriverManager.getConnection(connectionString);
         }
         catch (Exception e)

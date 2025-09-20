@@ -5,9 +5,6 @@ import org.openqa.selenium.interactions.Coordinates;
 
 import java.util.List;
 
-/**
- * Created by Karthik-pc on 12/10/2016.
- */
 public class ControlBase implements Control {
 
 

@@ -3,9 +3,6 @@ package com.selenium.framework.utilities;
 import java.sql.Connection;
 import java.util.Hashtable;
 
-/**
- * Created by Karthik-PC on 11/23/2016.
- */
 public class ReportingUtil {
 
 
