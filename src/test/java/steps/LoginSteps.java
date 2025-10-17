@@ -1,17 +1,15 @@
 package steps;
 
 import com.selenium.framework.base.Base;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 
 import java.util.List;
-
-import org.testng.Assert;
 
 /**
  * Created by Karthik-pc on 12/4/2018.
@@ -35,7 +33,7 @@ public class LoginSteps extends Base {
     @When("^I enter UserName and Password$")
     public void iEnterUserNameAndPassword(DataTable data) {
         //List<List<String>> table = data.raw();
-    	List<List<String>> table = data.asLists();
+        List<List<String>> table = data.asLists();
         CurrentPage.As(LoginPage.class).Login(table.get(1).get(0).toString(), table.get(1).get(1).toString());
     }
 

@@ -3,12 +3,9 @@ package pages;
 import com.selenium.framework.base.BasePage;
 import com.selenium.framework.base.DriverContext;
 import com.selenium.framework.controls.elements.HyperLink;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
-import java.sql.Driver;
 
 /**
  * Created by kkr on 11/26/2018.

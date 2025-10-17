@@ -3,7 +3,6 @@ package com.selenium.framework.controls.api;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
-import java.lang.reflect.InvocationTargetException;
 
 public class ControlFactory extends PageFactory {
 

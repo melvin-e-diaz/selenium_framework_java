@@ -20,14 +20,12 @@ public class EmployeeListPage extends BasePage {
     public WebElement tblEmployeeList;
 
 
-    public CreateEmployeePage ClickCreateNew()
-    {
+    public CreateEmployeePage ClickCreateNew() {
         lnkCreateNew.click();
         return GetInstance(CreateEmployeePage.class);
     }
 
-    public WebElement GetEmployeeList()
-    {
+    public WebElement GetEmployeeList() {
         return tblEmployeeList;
     }
 

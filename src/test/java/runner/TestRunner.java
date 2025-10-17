@@ -4,18 +4,15 @@ package runner;
 //import cucumber.api.testng.CucumberFeatureWrapper;
 //import cucumber.api.testng.TestNGCucumberRunner;
 //import cucumber.runtime.model.CucumberTagStatement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
-
-import java.util.Iterator;
-import java.util.List;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 /**
  * Created by Karthik-pc on 24/4/2018.
@@ -51,17 +48,16 @@ public class TestRunner {
 //
 //        testNGCucumberRunner.runCucumber(cucumberFeatureWrapper.getCucumberFeature());
 //    }
-    
+
     @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "features")
-    public void runScenario(PickleWrapper pickle, FeatureWrapper cucumberFeature)
-    {
-    	testNGCucumberRunner.runScenario(pickle.getPickle());
+    public void runScenario(PickleWrapper pickle, FeatureWrapper cucumberFeature) {
+        testNGCucumberRunner.runScenario(pickle.getPickle());
     }
 
     @DataProvider
     public Object[][] scenarios() {
         //return testNGCucumberRunner.provideFeatures();
-    	return testNGCucumberRunner.provideScenarios();
+        return testNGCucumberRunner.provideScenarios();
     }
 
     @AfterClass(alwaysRun = true)

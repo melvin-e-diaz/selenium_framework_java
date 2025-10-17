@@ -2,7 +2,6 @@ package steps;
 
 import com.selenium.framework.base.DriverContext;
 import com.selenium.framework.utilities.CucumberUtil;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -15,7 +14,7 @@ import static com.selenium.framework.base.Base.CurrentPage;
 /**
  * Created by Karthik-pc on 21/4/2018.
  */
-public class EmployeeSteps  {
+public class EmployeeSteps {
     @And("^I click employeeList link$")
     public void iClickEmployeeListLink() throws Throwable {
         CurrentPage = CurrentPage.As(HomePage.class).ClickEmployeeList();
@@ -33,8 +32,8 @@ public class EmployeeSteps  {
     public void iEnterFollowingDetails(DataTable table) throws Throwable {
         CucumberUtil.ConvertDataTableToDict(table);
 
-        CurrentPage.As(CreateEmployeePage.class).CreateEmployee(CucumberUtil.GetCellValueWithRowIndex("Name",2), CucumberUtil.GetCellValueWithRowIndex("Salary",2),
-                CucumberUtil.GetCellValueWithRowIndex("DurationWorked",2), CucumberUtil.GetCellValueWithRowIndex("Grade",2), CucumberUtil.GetCellValueWithRowIndex("Email",2));
+        CurrentPage.As(CreateEmployeePage.class).CreateEmployee(CucumberUtil.GetCellValueWithRowIndex("Name", 2), CucumberUtil.GetCellValueWithRowIndex("Salary", 2),
+                CucumberUtil.GetCellValueWithRowIndex("DurationWorked", 2), CucumberUtil.GetCellValueWithRowIndex("Grade", 2), CucumberUtil.GetCellValueWithRowIndex("Email", 2));
     }
 
     @And("^I click create button$")

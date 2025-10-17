@@ -6,8 +6,7 @@ import java.util.Hashtable;
 public class ReportingUtil {
 
 
-    public static void CreateTestCycle(Connection connection)
-    {
+    public static void CreateTestCycle(Connection connection) {
 
         //Params
         Hashtable table = new Hashtable();
@@ -17,9 +16,9 @@ public class ReportingUtil {
         table.put("BuildNo", "1.0");
         table.put("ApplicationVersion", "1.0");
         table.put("MachineName", "Windows 10");
-        table.put("TestType",1);
+        table.put("TestType", 1);
 
-        DatabaseUtil.ExecuteStoredProc("sp_CreateTestCycleID",table, connection );
+        DatabaseUtil.ExecuteStoredProc("sp_CreateTestCycleID", table, connection);
 
     }
 

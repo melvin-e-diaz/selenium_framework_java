@@ -1,9 +1,9 @@
 package com.selenium.framework.utilities;
 
+import io.cucumber.datatable.DataTable;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import io.cucumber.datatable.DataTable;
 
 public class CucumberUtil {
 
@@ -33,7 +33,7 @@ public class CucumberUtil {
     public static String GetCellValueWithRowIndex(String columnName, int rowNumber) {
         final String[] columnValue = {null};
         _dataCollection.forEach(x -> {
-            if(x.ColumnName.equals(columnName) && x.RowNumber == rowNumber){
+            if (x.ColumnName.equals(columnName) && x.RowNumber == rowNumber) {
                 columnValue[0] = x.ColumnValue;
             }
         });

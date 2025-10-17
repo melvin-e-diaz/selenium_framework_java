@@ -7,6 +7,8 @@ import com.selenium.framework.controls.internals.Control;
 public interface Button extends Control {
 
     void PerformClick();
+
     String GetButtonText();
+
     void PerformSubmit();
 }

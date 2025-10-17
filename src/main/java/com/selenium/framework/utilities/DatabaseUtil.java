@@ -6,40 +6,31 @@ import java.util.Hashtable;
 
 public class DatabaseUtil {
 
-    public static Connection Open(String connectionString)
-    {
+    public static Connection Open(String connectionString) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); //to-do: update to replace deprecated class
             return DriverManager.getConnection(connectionString);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
         return null;
     }
 
-    public static  void Close()
-    {
+    public static void Close() {
         //
     }
 
-    public static void ExecuteQuery(String query, Connection connection)
-    {
+    public static void ExecuteQuery(String query, Connection connection) {
         Statement statement = null;
-        try
-        {
+        try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
     }
 
-    public static void ExecuteStoredProc(String procedureName, Hashtable parameters, Connection connection)
-    {
+    public static void ExecuteStoredProc(String procedureName, Hashtable parameters, Connection connection) {
         try {
 
             int paramterLength = parameters.size();

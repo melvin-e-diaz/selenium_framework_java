@@ -42,7 +42,7 @@ public class LogUtil {
         try {
             formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy:HH_MM_SS");
             String dateFormat = date.format(formatter);
-            bufferedWriter.write("["+dateFormat +"]: "+ message);
+            bufferedWriter.write("[" + dateFormat + "]: " + message);
             bufferedWriter.newLine();
             bufferedWriter.flush();
         } catch (Exception e) {

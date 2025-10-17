@@ -31,7 +31,7 @@ public class ControlBase implements Control {
 
     @Override
     public void clear() {
-            element.clear();
+        element.clear();
     }
 
     @Override
@@ -109,4 +109,4 @@ public class ControlBase implements Control {
         return element;
     }
 
- }
+}

@@ -1,12 +1,8 @@
 package pages;
 
 import com.selenium.framework.base.BasePage;
-import com.selenium.framework.base.DriverContext;
 import com.selenium.framework.controls.elements.Button;
-import com.selenium.framework.controls.elements.ButtonBase;
 import com.selenium.framework.controls.elements.TextBox;
-import com.selenium.framework.controls.elements.TextBoxBase;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;

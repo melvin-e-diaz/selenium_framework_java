@@ -1,6 +1,5 @@
 package com.selenium.framework.controls.elements;
 
-import com.selenium.framework.controls.internals.Control;
 import com.selenium.framework.controls.internals.ControlBase;
 import org.openqa.selenium.WebElement;
 

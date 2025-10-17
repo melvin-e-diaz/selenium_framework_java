@@ -13,19 +13,14 @@ public class CreateEmployeePage extends BasePage {
 
     @FindBy(how = How.ID, using = "Name")
     public WebElement txtName;
-
-    @FindBy(how = How.ID, using = "Salary")
-    WebElement txtSalary;
-    
     @FindBy(how = How.ID, using = "DurationWorked")
     public WebElement txtDurationWorked;
-
     @FindBy(how = How.ID, using = "Grade")
     public WebElement txtGrade;
-
     @FindBy(how = How.ID, using = "Email")
     public WebElement txtEmail;
-
+    @FindBy(how = How.ID, using = "Salary")
+    WebElement txtSalary;
     @FindBy(how = How.XPATH, using = "//input[@value='Create']")
     WebElement btnCreateEmployee;
 
@@ -41,6 +36,6 @@ public class CreateEmployeePage extends BasePage {
         txtDurationWorked.sendKeys(durationworked);
         txtGrade.sendKeys(grade);
         txtEmail.sendKeys(email);
-        
+
     }
 }
