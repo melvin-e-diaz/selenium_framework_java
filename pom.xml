@@ -33,7 +33,7 @@
                         <configuration>
                             <projectName>seleniumFramework2025</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber-json-report.json</cucumberOutput>
+                            <jsonFiles>${project.build.directory}/cucumber-json-report.json</jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
