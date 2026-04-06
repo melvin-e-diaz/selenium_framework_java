@@ -19,65 +19,48 @@ public class FrameworkInitialize extends Base {
      */
     public static void InitializeBrowser(BrowserType browserType) {
 
-        WebDriver driver = null;
+        WebDriver driver;
         switch (browserType) {
-            case Chrome: {
+            case Chrome:
                 if (Settings.WebDriverManagerEnabled) {
                     WebDriverManager.chromedriver().setup();
-                    break;
+                    driver = new ChromeDriver(buildChromeOptions());
                 } else {
-                    driver = chromeSetup(driver);
-                    break;
+                    driver = chromeSetup();
                 }
-            }
-            case Edge: {
+                break;
+            case Edge:
                 if (Settings.WebDriverManagerEnabled) {
                     WebDriverManager.edgedriver().setup();
-                    break;
+                    driver = new EdgeDriver();
                 } else {
-                    driver = edgeSetup(driver);
-                    break;
+                    driver = edgeSetup();
                 }
-            }
-            case Firefox: {
+                break;
+            case Firefox:
                 if (Settings.WebDriverManagerEnabled) {
                     WebDriverManager.firefoxdriver().setup();
-                    break;
+                    driver = new FirefoxDriver();
                 } else {
-                    driver = firefoxSetup(driver);
-                    break;
+                    driver = firefoxSetup();
                 }
-            }
-            case Safari: {
+                break;
+            case Safari:
                 if (Settings.WebDriverManagerEnabled) {
                     WebDriverManager.safaridriver().setup();
-                    break;
-                } else {
-                    driver = new SafariDriver();
-                    break;
                 }
-            }
+                driver = new SafariDriver();
+                break;
         }
 
-
-        //Set the Driver
+        DriverContext.WebDriverWait = Settings.WebDriverWait;
         DriverContext.setDriver(driver);
-        //Browser
         DriverContext.Browser = new Browser(driver);
 
     }
 
-    /**
-     * Function to set up Google Chrome Browser
-     *
-     * @param driver WEBDRIVER local instance of current web driver
-     * @return WEBDRIVER with Chrome initialized
-     */
-    private static WebDriver chromeSetup(WebDriver driver) {
+    private static ChromeOptions buildChromeOptions() {
         ChromeOptions driverOpts = new ChromeOptions();
-        if (System.getProperty("os.name").contains("Mac") || System.getProperty("os.name").contains("Linux")) {
-            System.setProperty("webdriver.chrome.driver", "libs/chromedriver");
-        } else System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
         driverOpts.addArguments("start-maximized");
         driverOpts.addArguments("--disable-extensions");
         driverOpts.addArguments("--remote-allow-origins=*");
@@ -85,37 +68,50 @@ public class FrameworkInitialize extends Base {
         if (Settings.Headless) {
             driverOpts.addArguments("--headless");
         }
-        return driver = new ChromeDriver();
+        return driverOpts;
+    }
+
+    /**
+     * Function to set up Google Chrome Browser
+     *
+     * @return WEBDRIVER with Chrome initialized
+     */
+    private static WebDriver chromeSetup() {
+        if (System.getProperty("os.name").contains("Mac") || System.getProperty("os.name").contains("Linux")) {
+            System.setProperty("webdriver.chrome.driver", "libs/chromedriver");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
+        }
+        return new ChromeDriver(buildChromeOptions());
     }
 
     /**
      * Function to set up Microsoft Edge Browser
      *
-     * @param driver WEBDRIVER local instance of current web driver
      * @return WEBDRIVER with Edge initialized
      */
-    private static WebDriver edgeSetup(WebDriver driver) {
+    private static WebDriver edgeSetup() {
         if (System.getProperty("os.name").contains("Mac") || System.getProperty("os.name").contains("Linux")) {
             System.setProperty("webdriver.edge.driver", "libs/msedgedriver");
-        } else System.setProperty("webdriver.edge.driver", "libs/msedgedriver.exe");
-        return driver = new EdgeDriver();
+        } else {
+            System.setProperty("webdriver.edge.driver", "libs/msedgedriver.exe");
+        }
+        return new EdgeDriver();
     }
 
     /**
      * Function to set up Mozilla Firefox Browser
      *
-     * @param driver WEBDRIVER local instance of current web driver
      * @return WEBDRIVER with Firefox initialized
      */
-    private static WebDriver firefoxSetup(WebDriver driver) {
-
-        //Open the browser
+    private static WebDriver firefoxSetup() {
         if (System.getProperty("os.name").contains("Mac") || System.getProperty("os.name").contains("Linux")) {
             System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-        } else System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-        return driver = new FirefoxDriver();
+        } else {
+            System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
+        }
+        return new FirefoxDriver();
     }
 
 
 }
-

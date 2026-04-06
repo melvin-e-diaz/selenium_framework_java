@@ -131,6 +131,7 @@ public class BaseTest {
                 String screenshot = ScreenShotUtil.captureScreenFile(Driver, logger, Status.SKIP, ScreenShotUtil.generateFileName(result));
                 logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " Test case SKIPPED", ExtentColor.BLUE));
                 logger.skip("Screenshot: " + logger.addScreenCaptureFromPath(screenshot));
+                break;
             }
             default:
                 throw new Exception("ERROR: Invalid ITestResult");

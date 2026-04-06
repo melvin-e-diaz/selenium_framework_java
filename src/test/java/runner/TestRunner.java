@@ -54,7 +54,7 @@ public class TestRunner {
         testNGCucumberRunner.runScenario(pickle.getPickle());
     }
 
-    @DataProvider
+    @DataProvider(name = "features")
     public Object[][] scenarios() {
         //return testNGCucumberRunner.provideFeatures();
         return testNGCucumberRunner.provideScenarios();

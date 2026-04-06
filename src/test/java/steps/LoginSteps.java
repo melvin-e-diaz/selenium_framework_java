@@ -45,7 +45,7 @@ public class LoginSteps extends Base {
 
     @Then("^I should see the username with hello$")
     public void iShouldSeeTheUsernameWithHello() throws Throwable {
-        Assert.assertEquals("The user is not admin", "Hello admin!", CurrentPage.As(HomePage.class).GetLoggedInUser());
+        Assert.assertEquals(CurrentPage.As(HomePage.class).GetLoggedInUser(), "Hello admin!", "The user is not admin");
     }
 
 

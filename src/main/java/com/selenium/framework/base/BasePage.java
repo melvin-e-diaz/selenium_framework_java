@@ -282,7 +282,8 @@ public abstract class BasePage extends Base {
             for (int i = 0; i < actualDropdownValuesToString.size(); i++) {
                 this.assertEquals(actualDropdownValuesToString.get(i), expectedDropdownValuesList.get(i));
             }
-            this.assertTrue(actualDropdownValuesToString.equals(expectedDropdownValuesList));
+            this.assertTrue(actualDropdownValuesToString.equals(expectedDropdownValuesList),
+                    "Dropdown option texts should match expected list");
         } catch (Exception e) {
             this.handleTestFailure(e, "Contents of dropdown list for " + elementName + " not verified.");
             return false;
@@ -451,14 +452,13 @@ public abstract class BasePage extends Base {
     }
 
 
-    private void assertTrue(boolean equals) {
-        // TODO Auto-generated method stub
-
-    }
-
-    public void assertEquals(int size, int size2) {
-        // TODO Auto-generated method stub
-
+    public void assertEquals(int actualValue, int expectedValue) {
+        try {
+            Assert.assertEquals(actualValue, expectedValue);
+            this.writeDebugLog("ASSERTION PASSED: Actual and expected values match: " + actualValue + " | " + expectedValue, null);
+        } catch (Exception e) {
+            this.handleTestFailure(e, "Assertion failed: Actual value is: " + actualValue + " | Expected value is: " + expectedValue);
+        }
     }
 
     /**
